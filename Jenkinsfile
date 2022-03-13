@@ -4,6 +4,7 @@ pipeline {
     stage("build"){
       steps {
         echo "Start build!"
+        sh "python Hello.py"
       }
       post {
         // 常に実行
