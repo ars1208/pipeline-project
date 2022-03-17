@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage("build"){
       steps {
-        echo "Start build!"
+        echo "========Start build!========"
         sh "python Hello.py"
       }
       post {
@@ -23,7 +23,7 @@ pipeline {
     }
     stage("check") {
       steps {
-        echo "Checking"
+        echo "========Checking========"
       }
     }
   }
