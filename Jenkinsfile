@@ -17,7 +17,9 @@ void executeScript(final String scriptName, String skipMessage) {
 }
 
 pipeline {
-  agent any
+  agent {
+    docker 'python:latest'
+  }
   stages {
     stage("Execute"){
       steps {
