@@ -1,10 +1,28 @@
+// Script config
+scriptDirectory = './commands'
+helloScriptName = 'hello.sh'
+
+// Method to execute script
+void executeScript(final String scriptName, String skipMessage) {
+  if (skipMessage == null) {
+    skipMessage = ''
+  }
+
+  def scriptPath = "${scriptDirectory}/${scriptName}"
+  if (fileExists(scriptPath)) {
+    sh "bash ${scriptPath}"
+  } else {
+    echo skipMessage
+  }
+}
+
 pipeline {
   agent any
   stages {
-    stage("build"){
+    stage("Execute"){
       steps {
-        echo "========Start build!========"
-        sh "python Hello.py"
+        echo "========Script execute!========"
+        executeScript(helloScriptName, "Skip script")
       }
       post {
         // 常に実行
