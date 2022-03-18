@@ -26,7 +26,8 @@ pipeline {
     stage("Execute"){
       steps {
         echo "========Script execute!========"
-        executeScript(helloScriptName, "Skip script")
+        sh "print(100)"
+        // executeScript(helloScriptName, "Skip script")
       }
       post {
         // 常に実行
