@@ -47,6 +47,7 @@ pipeline {
     stage("check") {
       steps {
         echo "========Checking========"
+        sh "echo 'Hello'"
       }
     }
   }
