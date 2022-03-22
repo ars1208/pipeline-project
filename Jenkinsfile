@@ -27,7 +27,9 @@ pipeline {
     stage("Execute"){
       steps {
         echo "========Script execute!========"
-        flag = true
+        script {
+          flag = true
+        }
         echo "${flag}"
         // sh "print(100)"
         // executeScript(helloScriptName, "Skip script")
