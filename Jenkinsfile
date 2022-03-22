@@ -1,6 +1,7 @@
 // Script config
 scriptDirectory = './commands'
 helloScriptName = 'hello.sh'
+flag = false
 
 // Method to execute script
 void executeScript(final String scriptName, String skipMessage) {
@@ -26,7 +27,9 @@ pipeline {
     stage("Execute"){
       steps {
         echo "========Script execute!========"
-        sh "print(100)"
+        flag = true
+        echo "${flag}"
+        // sh "print(100)"
         // executeScript(helloScriptName, "Skip script")
       }
       post {
